@@ -1,7 +1,27 @@
+"""
+    Операции со строками
+"""
+
 a = 'Hello'
 b = 'world'
 
-print(a + b)
-print(a * 10)
+# Конкатенация (объединение) строк
+print(a + b)  # Helloworld
 
-print(len(a))
+# Дублирование строк
+print(a * 10)  # HelloHelloHelloHelloHelloHelloHelloHelloHelloHello
+
+# функция len() возвращает длину строки
+print(len(a))  # 5
+
+# Сравнивание строк (сравниваются уникальные коды символов по порядку)
+print('abcd' > 'abc')  # True
+print('ABC' > 'a')  # False
+
+# Чтобы узнать уникальный код - функция ord
+print(ord('A'))  # 65
+print(ord('a'))  # 97
+
+# Оператор in и not in. Нужен для проверки вхождения подстроки в строку
+print('ello' in a)  # True
+print('worl' not in b)  # False

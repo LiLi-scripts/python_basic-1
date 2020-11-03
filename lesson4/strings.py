@@ -1,19 +1,18 @@
-str_1 = 'python'
+"""
+    Для определения строки используются "", '', '''''', """"""
 
+    В одинарных кавычках или апострофах можно написать только 1 строку,
+    а в тройных - много строк, как например этот комментарий.
+"""
+
+str_1 = 'python is the best language'
 str_2 = """python
-asdas
-as
-d
-asd
-as
-d
-a"""
-
-# "python" is the best language
+            is
+                the best
+                    language
+"""
 str_3 = '"python" is the best language'
 str_4 = "\"python\" is the best language"
-
-# str_3 = "'python' is the best language"
 
 print(str_1)
 print(str_2)
@@ -25,28 +24,37 @@ print(str_4)
 # \t - табуляция
 
 str_5 = '\tHello\nworld!'
-print(str_5)
+print(str_5)  #     Hello
+              # world!
 
-# префиксы r, f, b
+
+# префиксы r (сырая строка), f (форматированная строка), b (байтовая строка)
 str_6 = r'\tHello\nworld!'
-print(str_6)
+print(str_6)  # \tHello\nworld!
 
-str_7 = '"python" is the best language "python" is the best language "python" is the best language "python" is the best language "python" is the best language '
 
-str_7 = '"python" is the best language "python" is the best language' + \
-    '"python" is the best language "python" is the best language' + \
-    '"python" is the best language "python" is the best language'
+# Варианты описания длинной строки в коде.
+str_7 = '"python" is the best language "python" is the best language "python" is the best language "python" is the best language "python" is the best language'
 
-str_7 = (
-    '"python" is the best language "python" is the best language'
-    '"python" is the best language "python" is the best language'
-    '"python" is the best language "python" is the best language'
-    '"python" is the best language "python" is the best language'
+# Можно конкатенировать строки и использовать перенос строки в коде - \
+str_8 = '"python" is the best language "python" is the best language ' + \
+    '"python" is the best language "python" is the best language ' + \
+    '"python" is the best language'
+
+# Объединить строки в одну с помощью ()
+str_9 = (
+    '"python" is the best language "python" is the best language '
+    '"python" is the best language "python" is the best language '
+    '"python" is the best language'
 )
-str_8 = """"python" is the best language "python" is the best language
+
+print(str_7 == str_8 == str_9)  # True
+
+# В данном варианте строка будет содержать символы переноса строки
+str_10 = """"python" is the best language "python" is the best language
 "python" is the best language "python" is the best language
 "python" is the best language "python" is the best language
 "python" is the best language "python" is the best language
 """
-print(7, str_7)
-print(8, str_8)
+
+print(str_9 == str_10)  # False
