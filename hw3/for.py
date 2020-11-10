@@ -8,3 +8,27 @@
     5. Если пользователь вводит y, то программа выполняется сначала.
         Иначе - выводит сообщение 'Bye!' и прекращает свою работу.
 """
+
+# Ниже описан один из вариантов решения задачи.
+
+while True:
+    # здесь так же необходимо обрабатывать ValueError
+    n = int(input('enter the number: '))
+    op = input('(+, -, *, /)')
+
+    result = None
+    for i in range(n):
+        # здесь так же необходимо обрабатывать ValueError
+        number = int(input('enter the number: '))
+
+        if result is None:
+            result = number
+        else:
+            if op == '+':
+                result += number
+            # и так для всех операторов + проверка / 0 для деления
+
+    print(result)
+
+    if input('Continue? (y/n) ') != 'y':
+        break
