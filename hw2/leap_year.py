@@ -12,5 +12,4 @@ if year % 4 == 0 and year % 100 != 0 or year % 400 == 0:
 else:
     print('365')
 
-# вариант решения со строчным if-else
 print('366' if year % 4 == 0 and year % 100 != 0 or year % 400 == 0 else '365')
