@@ -1,24 +1,49 @@
 """
     Файлы.
+    Файл можно открыть на чтение, запись, дозапись либо создание и запись.
+    Моды можно комбинировать.
 """
 
+"""
+    Первый вариант работы с файлов.
+    1. Открыть файл.
+    2. Что-то с ним сделать.
+    3. Закрыть файл
+"""
+
+# для открытия файла используется функция open('path/to/file.ext', 'mode')
 test_file = open('test.txt', 'r')  # r w a
 
-print(test_file.tell())
+# tell() - возвращает текущее положение курсора
+print(test_file.tell())  # 0
+
+# read() - читает файл и возвращает содержимое в строком виде
 print(test_file.read())
 
-test_file.seek(15)
-print(test_file.tell())
+# seek() - перевести курсов на конкретный символ в файле
+test_file.seek(15)  # перевести на 15 символ
+print(test_file.tell())  # 15
 print(test_file.read())
 
-test_file.seek(0)
+test_file.seek(0)  # перевести на 0 символ
+# readline() - чтение строки файла
 print(test_file.readline())
+# readlines() - читает файл построчно и возвращает список стррок
 print(test_file.readlines())
 
+# close() - закрывает файл
 test_file.close()
 
+"""
+    Второй вариант - использование конструкции with (закрывать файл не нужно)
+"""
 
-with open('hello.txt', 'w') as f:
-    # print(f.read())
-    f.write('hello world!')
-    print('hello world!', file=f)
+with open('hello.txt', 'a+') as f:
+    # при открытии файла на дозапись курсор расположен в конце файла
+    print(f.read())  # ''
+    f.write('hello world!')  # допишет строку в конец файла
+    print(f.seek(0))  # перевести курсор в начало файла
+    print(f.read())  # вернет все содержимое файла
+
+    # второй вариант записи в файл
+    print('\nsome text', file=f)
